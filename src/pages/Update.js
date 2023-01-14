@@ -1,5 +1,6 @@
 import { useEffect,useState } from "react";
 import { Navigate, useNavigate, useParams } from "react-router-dom";
+import Footer from "../components/Footer";
 import supabase from "./SupabaseClient";
 
 
@@ -62,7 +63,7 @@ const Update = () => {
     fetchBooks()
   },[id,navigate])
   return (
-    <div className="page update">
+    <div className="">
       <form onSubmit={handleSubmit}>
         <label htmlFor="title">Title:</label>
         <input 
@@ -91,6 +92,21 @@ const Update = () => {
 
         {formError && <p className="error">{formError}</p>}
       </form>
+
+      <div className="flex items-center">
+
+      <div className="w-1/4 h-20 flex justify-center items-center">
+        <h1>Preview</h1>
+      </div>
+
+      <div className="flex flex-col items-center h-[500px] justify-evenly bg-black w-1/2 text-white p-5 rounded-lg">
+        <h1>{title}</h1>
+        <p>{summery}</p>
+        <p>{rating}</p>
+      </div>
+    
+      </div>
+      <Footer/>
     </div>
   )
 }

@@ -1,92 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap');
 
 :root {
   --primary: #127bbc;
   --secondary: rgb(255, 196, 0);
 }
-h1,h2,h3 {
-  margin: 0;
-}
+
 
 body {
-  margin: 0;
-  color: #333;
   font-family: 'Poppins';
-}
-nav {
-  background: var(--primary);
-  padding: 10px 20px;
-  text-align: center;
-}
-nav a {
-  color: #f2f2f2;
-  margin: 10px;
-  display: inline-block;
-}
-nav h1 {
-  color: #fff;
-}
-.page {
-  width: 100vw;
- box-sizing: border-box;
- padding: 20px;
-}
-
-.smoothies{
-  display: flex;
-  height: 100%;
-  width: 100%;
-}
-
-/* smoothie grid */
-.smoothies-grid {
-  display: flex; 
-  flex-wrap: wrap;
-  gap:20px;
-}
-.smoothie-card {
-  width: 100%;
-  padding: 10px;
   box-sizing: border-box;
-  border-radius: 6px;
-  position: relative;
 }
-.smoothie-card .rating {
-  position: absolute;
-  top: -10px;
-  right: -10px;
-  background: var(--secondary);
-  color: #fff;
-  border-radius: 6px;
-  width: 40px;
-  height: 0;
-  padding: 20px 0;
-  line-height: 0px;
-  text-align: center;
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.btn {
+  @apply font-bold py-2 px-4 rounded;
+}
+
+.btn-del {
+  @apply bg-red-500 text-white;
+}
+.btn-edit {
+  @apply bg-white text-black;
+}
+.btn-blue {
+  @apply bg-transparent text-blue-500 border-blue-400 border;
+}
+.btn-blue:hover {
+  @apply bg-blue-600 text-white;
 }
 
 form {
   background: #fff;
   padding: 20px;
+  height: 600px;
   max-width: 480px;
   margin: 0 auto;
   border-radius: 6px;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 form input, form textarea {
   display: block;
   width: 100%;
   padding: 6px;
   box-sizing: border-box;
-  border: 1px solid #ccc;
-  margin: 10px 0 20px 0;
+  border-width: 2px;
+  border-color: black;
 }
 form button {
   background: var(--primary);
   color: #fff;
   border: 0;
   border-radius: 6px;
-  padding: 6px 8px;
-  font-family: "Poppins";
+  padding: 15px 8px;
   cursor: pointer;
 }
 

@@ -1,6 +1,7 @@
 import supabase from "./SupabaseClient";
 import { useState,useEffect } from "react";
 import BookCard from "../components/BookCard";
+import Footer from "../components/Footer";
 
 const Home = () => {
   const [fetchError, setfetchError] = useState(null);
@@ -35,25 +36,34 @@ const Home = () => {
   
 
   return (
-    <div className="page home">
+    <>
+    <div className="p-5">
       {fetchError && (<p>{fetchError}</p>)}
       {Booksavailble && (
-        <div className="smoothies">
-          <div className="order-by">
-            <p>Order by:</p>
-            <button onClick={() => setOrderby('created_at')}>Time Created</button>
-            <button onClick={() => setOrderby('title')}>Title</button>
-            <button onClick={() => setOrderby('rating')}>Rating</button>
-            {orderBy}
+        <div className="flex flex-col">
+          <div className="flex justify-evenly items-center p-10">
+            <p className="text-xl">Order by : {orderBy}</p>
+            <button className="btn btn-blue" 
+            onClick={() => setOrderby('created_at')}>Time Created</button>
+            <button className="btn btn-blue" 
+            onClick={() => setOrderby('title')}>Title</button>
+            <button className="btn btn-blue" 
+            onClick={() => setOrderby('rating')}>Rating</button>
           </div>
-          <div className="smoothies-grid">
+
+
+          <div className="flex flex-col lg:flex-row gap-2">
           {Booksavailble.map(Book => (
             <BookCard key={Book.id} Book={Book}/>
           ))}
-        </div>
+          </div>
+
+
         </div>
       )}
     </div>
+    <Footer/>
+    </>
   )
 }
 

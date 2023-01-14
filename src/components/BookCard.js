@@ -24,18 +24,20 @@ const BookCard = ({ Book }) => {
 
 
   return (
-    <div className="smoothie-card">
+    <div className="flex flex-col justify-evenly items-center p-10 bg-black rounded-lg text-white relative h-[500px] lg:w-1/2">
         <h3>{Book.title}</h3>
-        <p>{Book.summery}</p>
-        <div className="rating">
+        <p className="h-[50%] w-[70%] scrolling-auto">{Book.summery}</p>
+        <div className="absolute flex justify-center items-center top-0 right-0 p-1 bg-yellow-500 rounded-sm text-white">
         {Book.rating}
+        <i className="material-icons">star
+        </i>
         </div>
           
-        <div className="buttons">
+        <div className="flex justify-evenly items-center w-full p-2">
           <Link to={'/' + Book.id}>
-            <i className="material-icons">edit</i>
+            <i className="material-icons btn btn-edit">edit</i>
           </Link>
-            <i className="material-icons"
+            <i className="material-icons btn btn-del cursor-pointer"
             onClick={handleDelete}
             >delete</i>
         </div>

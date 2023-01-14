@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
+import Footer from "../components/Footer"
 import supabase from "./SupabaseClient"
 
 const Create = () => {
@@ -38,24 +39,26 @@ const Create = () => {
   }
 
   return (
-    <div className="page create">
+    <>
+    <div className="p-10">
       <form onSubmit={handleSubmit}>
-        <label htmlFor="title">Title:</label>
+        <label htmlFor="title">Title : </label>
         <input 
           type="text" 
           id="title"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
         />
+        
 
-        <label htmlFor="summery">summery:</label>
+        <label htmlFor="summery">summery : </label>
         <textarea 
           id="summery"
           value={summery}
           onChange={(e) => setsummery(e.target.value)}
         />
 
-        <label htmlFor="rating">Rating:</label>
+        <label htmlFor="rating">Rating : 1 - 5 </label>
         <input 
           type="number"
           id="rating"
@@ -68,6 +71,8 @@ const Create = () => {
         {formError && <p className="error">{formError}</p>}
       </form>
     </div>
+    <Footer/>
+    </>
   )
 }
 
