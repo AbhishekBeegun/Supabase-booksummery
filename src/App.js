@@ -10,13 +10,13 @@ function App() {
   return (
     <BrowserRouter>
       <nav className="flex justify-evenly items-center bg-black h-20 text-white">
-        <div className="text-xl flex items-center gap-1">
+        <a href="/" className="text-xl flex items-center gap-1">
         <i className="material-icons">book</i>
-        <h1 className="uppercase">Book Club</h1>
-        </div>
+        <h1 className="uppercase">SupaBook</h1>
+        </a>
         
-        <Link to="/" className="material-icons hover:text-red-500">home</Link>
-        <Link to="/create" className="hover:text-red-500">Create Summery</Link>
+        <Link to="/" className="material-icons hidden lg:block hover:text-red-500">home</Link>
+        <Link to="/create" className="hover:bg-red-700 p-2 bg-red-500 rounded-lg">Create Summery</Link>
       </nav>
 
       <Routes>

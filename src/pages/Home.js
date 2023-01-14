@@ -10,6 +10,8 @@ const Home = () => {
   const[orderBy,setOrderby] = useState('created_at')
 
 
+  
+
   useEffect(() => {
     const fetchBooks = async () =>{
       const {data,error} = await supabase
@@ -42,9 +44,9 @@ const Home = () => {
       {Booksavailble && (
         <div className="flex flex-col">
           <div className="flex justify-evenly items-center p-10">
-            <p className="text-xl">Order by : {orderBy}</p>
+            <p className="text-[0.3rem] lg:text-xl">Order by : {orderBy}</p>
             <button className="btn btn-blue" 
-            onClick={() => setOrderby('created_at')}>Time Created</button>
+            onClick={() => setOrderby('created_at')}>Date</button>
             <button className="btn btn-blue" 
             onClick={() => setOrderby('title')}>Title</button>
             <button className="btn btn-blue" 
@@ -52,7 +54,7 @@ const Home = () => {
           </div>
 
 
-          <div className="flex flex-col lg:flex-row gap-2">
+          <div className="flex flex-col lg:items-center lg:flex-wrap gap-2">
           {Booksavailble.map(Book => (
             <BookCard key={Book.id} Book={Book}/>
           ))}

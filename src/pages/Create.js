@@ -40,7 +40,7 @@ const Create = () => {
 
   return (
     <>
-    <div className="p-10">
+    <div className="p-3">
       <form onSubmit={handleSubmit}>
         <label htmlFor="title">Title : </label>
         <input 
@@ -51,7 +51,7 @@ const Create = () => {
         />
         
 
-        <label htmlFor="summery">summery : </label>
+        <label htmlFor="summery">Summery : </label>
         <textarea 
           id="summery"
           value={summery}

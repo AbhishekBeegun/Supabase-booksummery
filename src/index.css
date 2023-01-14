@@ -8,6 +8,11 @@
   --primary: #127bbc;
   --secondary: rgb(255, 196, 0);
 }
+*{
+  padding: 0 ;
+  margin: 0;
+  overflow-x: hidden;
+}
 
 
 body {
@@ -19,7 +24,7 @@ body::-webkit-scrollbar {
 }
 
 .btn {
-  @apply font-bold py-2 px-4 rounded;
+  @apply font-bold py-1 px-2 rounded lg:py-2 lg:px-2 ;
 }
 
 .btn-del {

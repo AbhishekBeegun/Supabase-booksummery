@@ -65,7 +65,7 @@ const Update = () => {
   return (
     <div className="">
       <form onSubmit={handleSubmit}>
-        <label htmlFor="title">Title:</label>
+        <label htmlFor="title">Title :</label>
         <input 
           type="text" 
           id="title"
@@ -73,14 +73,14 @@ const Update = () => {
           onChange={(e) => setTitle(e.target.value)}
         />
 
-        <label htmlFor="summery">summery:</label>
+        <label htmlFor="summery">Summery :</label>
         <textarea 
           id="summery"
           value={summery}
           onChange={(e) => setsummery(e.target.value)}
         />
 
-        <label htmlFor="rating">Rating:</label>
+        <label htmlFor="rating">Rating :</label>
         <input 
           type="number"
           id="rating"
@@ -93,16 +93,21 @@ const Update = () => {
         {formError && <p className="error">{formError}</p>}
       </form>
 
-      <div className="flex items-center">
+      <div className="flex flex-col items-center">
 
-      <div className="w-1/4 h-20 flex justify-center items-center">
-        <h1>Preview</h1>
+      <div className="lg:w-1/4 h-20 flex justify-center items-center">
+        <h1 className="text-lg">Preview : </h1>
       </div>
 
-      <div className="flex flex-col items-center h-[500px] justify-evenly bg-black w-1/2 text-white p-5 rounded-lg">
+      <div className="relative flex flex-col items-center h-[500px] justify-evenly bg-black w-8/12 lg:w-1/2 text-white p-5 rounded-lg">
         <h1>{title}</h1>
         <p>{summery}</p>
-        <p>{rating}</p>
+        <div className="absolute flex justify-center items-center top-0 right-0 p-1 bg-yellow-500 rounded-sm text-white">
+         {rating}
+         <i className="material-icons">star
+         </i>
+        </div>
+       
       </div>
     
       </div>
