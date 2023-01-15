@@ -33,13 +33,18 @@ const BookCard = ({ Book }) => {
          </i>
         </div>
           
-        <div className="flex justify-evenly items-center w-full p-2">
-          <Link to={'/' + Book.id}>
+        <div className="flex justify-evenly items-center w-full p-2 transition-all ease-in-out">
+          <Link className="flex items-center gap-2 hover:scale-110" 
+          to={'/' + Book.id}>
             <i className="material-icons btn btn-edit">edit</i>
+            <p>Edit</p>
           </Link>
+          <div className="flex items-center gap-2 cursor-pointer hover:scale-110">
             <i className="material-icons btn btn-del cursor-pointer"
             onClick={handleDelete}
             >delete</i>
+            <p>Delete</p>
+          </div>
         </div>
     </div>
   )
